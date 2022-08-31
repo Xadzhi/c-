@@ -2,3 +2,4 @@ bin
 obj
 newproject.csproj
 Homework3.csproj
+obj\Debug\net6.0
