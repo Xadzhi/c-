@@ -45,20 +45,20 @@
 // Console.WriteLine($"[{string.Join(", ", array)}]");
 // Console.WriteLine(FindAmount(array));
 //  Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
-int[] RandomArray(int size = 10)
+Double[] RandomArray(int size = 10)
 {
-int[] array = new int[size];
+Double[] array = new Double[size];
 for (int i = 0; i < array.Length; i++)
 {
-array[i] = new Random().Next(1, 99);
+array[i] = new Random().Next(1, 99)/10.0;
 }
 return array;
 }
-int[] array = RandomArray();
+Double[] array = RandomArray();
 Console.WriteLine($"[{string.Join(", ", array)}]");
 
-int max = array[0];
-int min = array[0];
+Double max = array[0];
+Double min = array[0];
  for (int i = 1; i < array.Length; i++)
  {
  if (array[i]>max)
@@ -70,7 +70,7 @@ else if (array[i]<min)
 min=array[i];
 }
 }
-int x = max - min;
+Double x = max - min;
 Console.WriteLine($"Максимальный Элемент " + max);
 Console.WriteLine($"Минимальный Элемент " + min);
 Console.WriteLine($"Разницу между максимальным и минимальным " + x);
