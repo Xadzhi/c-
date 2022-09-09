@@ -50,7 +50,7 @@ Double[] RandomArray(int size = 10)
 Double[] array = new Double[size];
 for (int i = 0; i < array.Length; i++)
 {
-array[i] = new Random().Next(1, 99)/10.0;
+array[i] = new Random().Next(1, 99);
 }
 return array;
 }
