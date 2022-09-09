@@ -1,47 +1,48 @@
 ﻿// Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь. Ввод чисел происходит через Enter, останавливается при введении слова "stop"
 
-// ПОЧЕМУ НЕ ЗАРАБОТАЛА ???
+                          ПОЧЕМУ НЕ ЗАРАБОТАЛА ???
 
-// double Count1(string args){
-//     int count = 0;
-//     while (args=="stop")
-//     {
-//         break;
-//     }
-//         int s = Convert.ToInt32(args);
-//         if (s>0)
-//                 {
-//         count++;    
-//         }
-//         return count;
-// }
-// Console.Write(Count1(Console.ReadLine()));
-
-
-int [] Array (string Ar){
-    string [] Nums = Ar.Split(",");
-    int[] res =new int [Nums.Length];
-    for (int i = 0; i < res.Length; i++)
-    {
-        res[i]=Convert.ToInt32(Nums[i]);
-    }
-    return res;
-
-}
-int Array2(int [] arr){
+double Count1(string args){
     int count = 0;
-    foreach (var item in arr)
+    while (args=="stop")
     {
-        if (item>0)
-        {
-            count++;
-        }
+        break;
     }
-    return count;
+        int s = Convert.ToInt32(args);
+        if (s>0)
+                {
+        count++;    
+        }
+        return count;
 }
-System.Console.WriteLine("Введите числа после запятой");
-int [] numbers = Array(Console.ReadLine());
-System.Console.WriteLine(Array2(numbers));
+Console.Write(Count1(Console.ReadLine()));
+
+// Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
+
+// int [] Array (string Ar){
+//     string [] Nums = Ar.Split(",");
+//     int[] res =new int [Nums.Length];
+//     for (int i = 0; i < res.Length; i++)
+//     {
+//         res[i]=Convert.ToInt32(Nums[i]);
+//     }
+//     return res;
+
+// }
+// int Array2(int [] arr){
+//     int count = 0;
+//     foreach (var item in arr)
+//     {
+//         if (item>0)
+//         {
+//             count++;
+//         }
+//     }
+//     return count;
+// }
+// System.Console.WriteLine("Введите числа после запятой");
+// int [] numbers = Array(Console.ReadLine());
+// System.Console.WriteLine(Array2(numbers));
 
 
 // Напишите программу, которая найдёт точку пересечения двух прямых, заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.
