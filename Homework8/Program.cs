@@ -8,34 +8,65 @@
 // 9 5 3 2
 // 8 4 4 2
 
-// Console.WriteLine("Введите количество строк: ");
-// int A = Convert.ToInt32(Console.ReadLine());
-// Console.WriteLine("Введите количество столбцов: ");
-// int B = Convert.ToInt32(Console.ReadLine());
-// int[,] array = GetArray (A, B, 0, 100);
-// PrintArray(array);
-// int[,] GetArray(int m, int n, int min, int max)
+// int m = InputNumbers("Введите m: ");
+// int n = InputNumbers("Введите n: ");
+// int range = InputNumbers("Введите диапазон: от 1 до ");
+
+// int[,] array = new int[m, n];
+// CreateArray(array);
+// WriteArray(array);
+
+// Console.WriteLine($"\nОтсортированный массив: ");
+// OrderArrayLines(array);
+// WriteArray(array);
+
+// void OrderArrayLines(int[,] array)
 // {
-//     int[,] result = new int[m, n];
-//       for (int i = 0; i < m; i++)
+//   for (int i = 0; i < array.GetLength(0); i++)
+//   {
+//     for (int j = 0; j < array.GetLength(1); j++)
+//     {
+//       for (int k = 0; k < array.GetLength(1) - 1; k++)
 //       {
-//         for (int j = 0; j < n; j++)
+//         if (array[i, k] < array[i, k + 1])
 //         {
-//           result[i, j] = new Random().Next(min, max +1);
+//           int temp = array[i, k + 1];
+//           array[i, k + 1] = array[i, k];
+//           array[i, k] = temp;
 //         }
 //       }
-//       return result;
+//     }
+//   }
 // }
-// void PrintArray(int[,] array)
+
+// int InputNumbers(string input)
 // {
-//       for (int i = 0; i < array.GetLength(0); i++)
-//       {
-//         for (int j = 0; j < array.GetLength(1); j++)
-//         {
-//           Console.Write($"{array[i, j]} ");
-//         }
-//         Console.WriteLine();
-//       }
+//   Console.Write(input);
+//   int output = Convert.ToInt32(Console.ReadLine());
+//   return output;
+// }
+
+// void CreateArray(int[,] array)
+// {
+//   for (int i = 0; i < array.GetLength(0); i++)
+//   {
+//     for (int j = 0; j < array.GetLength(1); j++)
+//     {
+//       array[i, j] = new Random().Next(range);
+//     }
+//   }
+// }
+
+// void WriteArray(int[,] array)
+// {
+//   for (int i = 0; i < array.GetLength(0); i++)
+//   {
+//     for (int j = 0; j < array.GetLength(1); j++)
+//     {
+//       Console.Write(array[i, j] + " ");
+//     }
+//     Console.WriteLine();
+//   }
 // }
 
 
@@ -268,3 +299,41 @@
 // 12 13 14 05
 // 11 16 15 06
 // 10 09 08 07
+
+int n = 4;
+int[,] sqareMatrix = new int[n, n];
+
+int temp = 1;
+int i = 0;
+int j = 0;
+
+while (temp <= sqareMatrix.GetLength(0) * sqareMatrix.GetLength(1))
+{
+  sqareMatrix[i, j] = temp;
+  temp++;
+  if (i <= j + 1 && i + j < sqareMatrix.GetLength(1) - 1)
+    j++;
+  else if (i < j && i + j >= sqareMatrix.GetLength(0) - 1)
+    i++;
+  else if (i >= j && i + j > sqareMatrix.GetLength(1) - 1)
+    j--;
+  else
+    i--;
+}
+
+WriteArray(sqareMatrix);
+
+void WriteArray (int[,] array)
+{
+  for (int i = 0; i < array.GetLength(0); i++)
+  {
+    for (int j = 0; j < array.GetLength(1); j++)
+    {
+      if (array[i,j] / 10 <= 0)
+      Console.Write($" {array[i,j]} ");
+
+      else Console.Write($"{array[i,j]} ");
+    }
+    Console.WriteLine();
+  }
+}
